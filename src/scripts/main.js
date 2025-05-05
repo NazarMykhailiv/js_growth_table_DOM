@@ -71,13 +71,13 @@ appendColBtn.addEventListener('click', function () {
       cell.textContent = '';
       row.appendChild(cell);
     });
+
+    const appendRight = parseInt(appendColBtn.style.right);
+    const removeRight = parseInt(removeColBtn.style.right);
+
+    removeColBtn.style.right = removeRight + 50 + 'px';
+    appendColBtn.style.right = appendRight + 50 + 'px';
   }
-
-  const appendRight = parseInt(appendColBtn.style.right);
-  const removeRight = parseInt(removeColBtn.style.right);
-
-  removeColBtn.style.right = removeRight + 50 + 'px';
-  appendColBtn.style.right = appendRight + 50 + 'px';
 
   if (rows[0].children.length >= 10) {
     appendColBtn.setAttribute('disabled', '');
@@ -97,13 +97,13 @@ removeColBtn.addEventListener('click', function () {
 
       row.removeChild(lastCell);
     });
+
+    const appendRight = parseInt(appendColBtn.style.right);
+    const removeRight = parseInt(removeColBtn.style.right);
+
+    removeColBtn.style.right = removeRight - 50 + 'px';
+    appendColBtn.style.right = appendRight - 50 + 'px';
   }
-
-  const appendRight = parseInt(appendColBtn.style.right);
-  const removeRight = parseInt(removeColBtn.style.right);
-
-  removeColBtn.style.right = removeRight - 50 + 'px';
-  appendColBtn.style.right = appendRight - 50 + 'px';
 
   if (rows[0].children.length < 10) {
     appendColBtn.removeAttribute('disabled');
